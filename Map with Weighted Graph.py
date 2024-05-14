@@ -71,3 +71,30 @@ class KatakanPeta():
 
         del distances[kota_awal]
         return distances, routes
+        
+ cities = ["Berlin", "Dresden", "Leipzig", "Magdeburg", "Hannover", "Hamburg", "Bremen", "Nurnberg", "Munchen", "Stuttgart", "Bielefeld", "Dortmund", "Frankfurt"]
+
+petajerman = Peta()
+for city in cities:
+    petajerman.tambahkanKota(city)
+    
+petajerman.tambahkanJalan("Berlin", {"Dresden": 193.2, "Leipzig": 164, "Hamburg": 295.1, "Magdeburg": 160.2})
+petajerman.tambahkanJalan("Dresden", {"Leipzig": 120.5, "Nurnberg": 390.6})
+petajerman.tambahkanJalan("Leipzig", {"Magdeburg": 129.9})
+petajerman.tambahkanJalan("Magdeburg", {"Hannover": 147.7})
+petajerman.tambahkanJalan("Hannover", {"Hamburg": 150.9, "Bremen": 137.4, "Bielefeld": 107.6,})
+petajerman.tambahkanJalan("Hamburg", {"Bremen": 125.9,})
+petajerman.tambahkanJalan("Bremen", {"Bielefeld": 188.8, "Dortmund": 233.5,})
+petajerman.tambahkanJalan("Bielefeld", {"Dortmund": 113.4})
+petajerman.tambahkanJalan("Nurnberg", {"Munchen": 170.2, "Stuttgart": 210.8, "Frankfurt":224.9 })
+petajerman.tambahkanJalan("Munchen", {"Stuttgart": 231.2})
+petajerman.tambahkanJalan("Stuttgart", {"Frankfurt": 206})
+petajerman.tambahkanJalan("Dortmund", {"Frankfurt": 227})
+
+
+print("=== PETA JERMAN ===")
+petajerman.tampilkanPeta()
+
+[distances, routes] = petajerman.dijkstra("Berlin")
+print(distances)
+print(routes)

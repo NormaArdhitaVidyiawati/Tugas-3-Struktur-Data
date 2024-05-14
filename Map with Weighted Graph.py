@@ -6,6 +6,23 @@
     3. Norma Ardhita Vidyiawati - 23091397169
 """
 
+class KatakanPeta():
+    def__init__(self):
+       self.daftarKota = {}
+       self.jumlahKota = 0
+
+   def tampilkanPeta(self):
+       for kota in self.daftarKota:
+           print(f"{kota}")
+           for kotaTetangga, jarak in self.daftarKota[kota].items():
+               print(f"\t--> {jarak} km -- {kotaTetangga}")
+
+        print(f"Jumlah Kota: {self.jumlahKota}")
+
+    def tambahkanKota(self, kota):
+        if kota not in self.daftarKota:
+            
+        
 def hapusJalan(self, kota1, kota2):
         if kota1 and kota2 in self.daftarKota:
             del self.daftarKota[kota1][kota2]
